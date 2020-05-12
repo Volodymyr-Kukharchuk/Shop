@@ -70,7 +70,13 @@ namespace Shop
             //        await context.Response.WriteAsync("Hello World!");
             //    });
             //});
-            
+            //app.UseMvc(routes =>
+            //{
+            //    routes.MapRoute(name: "default", template: "{controller=Home}/{action=Index}/{id?}");
+            //    routes.MapRoute(name: "CategoryFilter", template: "{controller=Car}/{action}/{category?}",
+            //        defaults: new {Controller = "Car", action = "List"});
+            //});
+
             using (var scope = app.ApplicationServices.CreateScope())
             {
                 AppContextDataBase context = scope.ServiceProvider.GetRequiredService<AppContextDataBase>();
