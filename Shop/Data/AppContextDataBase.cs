@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Shop.Data.Models;
 
+
 namespace Shop.Data
 {
     public class AppContextDataBase:DbContext
@@ -15,5 +16,6 @@ namespace Shop.Data
         }
         public DbSet<Car> Car { get; set; }
         public DbSet<Category> Category { get; set; }
+        public DbSet<ShopCartItem> ShopCartItem { get; set; }
     }
 }

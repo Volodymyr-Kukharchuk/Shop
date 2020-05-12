@@ -29,7 +29,7 @@ namespace Shop.Data
                          LongDesc = "LongDesc Tesla",
                          Image = "/images/tesla.jpg",
                          Price = 45000,
-                         IsFavorite = true,
+                         IsFavorite = false,
                          Available = true,
                          Category = Categories["Electro Cars"]
                      },
@@ -51,7 +51,7 @@ namespace Shop.Data
                         LongDesc = "LongDesc Nissan",
                         Image = "/images/nissanGTR.jpg",
                         Price = 16000,
-                        IsFavorite = true,
+                        IsFavorite = false,
                         Available = true,
                         Category = Categories["Classic Cars"]
                     },
@@ -73,7 +73,7 @@ namespace Shop.Data
                         LongDesc = "LongDesc Audi",
                         Image = "/images/audi e-tron GT.jpg",
                         Price = 8900,
-                        IsFavorite = true,
+                        IsFavorite = false,
                         Available = true,
                         Category = Categories["Electro Cars"]
                     },
@@ -95,7 +95,7 @@ namespace Shop.Data
                         LongDesc = "LongDesc Nissan",
                         Image = "/images/nismoR-34.jpg",
                         Price = 8900,
-                        IsFavorite = true,
+                        IsFavorite = false,
                         Available = true,
                         Category = Categories["Classic Cars"]
                     },
@@ -106,7 +106,7 @@ namespace Shop.Data
                         LongDesc = "LongDesc Honda",
                         Image = "/images/honda s2000.jpg",
                         Price = 1900,
-                        IsFavorite = true,
+                        IsFavorite = false,
                         Available = true,
                         Category = Categories["Classic Cars"]
                     }
@@ -114,28 +114,29 @@ namespace Shop.Data
             }
 
             context.SaveChanges();
+            
         }
 
-        private static Dictionary<string, Category> category;
+        private static Dictionary<string, Category> _category;
         public static Dictionary<string, Category> Categories
         {
             get
             {
-                if (category == null)
+                if (_category == null)
                 {
                     var list = new Category[]
                     {
                         new Category{Name = "Electro Cars", Description = "Novadays type of transport"},
                         new Category{Name = "Classic Cars", Description = "Esance engine cars"}
                     };
-                    category = new Dictionary<string, Category>();
+                    _category = new Dictionary<string, Category>();
                     foreach (var element in list)
                     {
-                        category.Add(element.Name, element);
+                        _category.Add(element.Name, element);
                     }
                 }
 
-                return category;
+                return _category;
             }
         }
 
