@@ -6,7 +6,7 @@ namespace Shop.Data.Interfaces
     public interface IAllCars
     {
         IEnumerable<Car> Cars { get;}
-        IEnumerable<Car> GetFavoritesCars { get; set; }
+        IEnumerable<Car> GetFavoritesCars { get;}
         Car GetObjectCar(int carId);
     }
 }

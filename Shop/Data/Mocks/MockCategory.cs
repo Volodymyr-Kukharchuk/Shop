@@ -10,7 +10,7 @@ namespace Shop.Data.Mocks
             new List<Category>
             {
                 new Category{Name = "Electro Cars", Description = "Novadays type of transport"},
-                new Category{Name = "Clasic Cars", Description = "Esance engine cars"}
+                new Category{Name = "Classic Cars", Description = "Esance engine cars"}
             };
     }
 }
